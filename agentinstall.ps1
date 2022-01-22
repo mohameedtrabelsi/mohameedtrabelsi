@@ -1,8 +1,14 @@
-﻿
-$URL = 'https://dev.azure.com/allymeer-hossen/'
-$PAT = 'pizo3qutl3xon7rppur7kxuuj6kbfin5fc7cxhu6exhdailn6hwq'
-$POOL = 'test'
-$AGENT = hostname
+
+param (
+    [Parameter(Mandatory)][int]$URL,
+    [Parameter(Mandatory)][int]$PAT,
+    [Parameter(Mandatory)][int]$POOL
+)
+
+# $URL = 'https://dev.azure.com/allymeer-hossen/'
+# $PAT = 'pizo3qutl3xon7rppur7kxuuj6kbfin5fc7cxhu6exhdailn6hwq'
+# $POOL = 'test'
+$AGENT = Hostname
 
 #test if an old installation exists, if so, delete the folder
 if (test-path "c:\agent")
