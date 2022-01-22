@@ -2,7 +2,7 @@
 $URL = 'https://dev.azure.com/allymeer-hossen/'
 $PAT = 'pizo3qutl3xon7rppur7kxuuj6kbfin5fc7cxhu6exhdailn6hwq'
 $POOL = 'test'
-$AGENT = 'Agent01'
+$AGENT = $WindowsVM.Name
 
 #test if an old installation exists, if so, delete the folder
 if (test-path "c:\agent")
