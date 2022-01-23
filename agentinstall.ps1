@@ -1,8 +1,8 @@
 
 param (
-    [Parameter(Mandatory)][int]$URL,
-    [Parameter(Mandatory)][int]$PAT,
-    [Parameter(Mandatory)][int]$POOL
+    [Parameter(Mandatory)][string]$URL,
+    [Parameter(Mandatory)][string]$PAT,
+    [Parameter(Mandatory)][string]$POOL
 )
 
 # $URL = 'https://dev.azure.com/allymeer-hossen/'
