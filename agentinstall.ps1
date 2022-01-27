@@ -35,7 +35,7 @@ Invoke-WebRequest $download -Out vsts-agent.zip
 
 #expand the zip
 Expand-Archive -Path vsts-agent.zip -DestinationPath $PWD
-write-host "agent is zipped "
+
 #run the config script of the build agent
 .\config.cmd --unattended --url "$URL" --auth pat --token "$PAT" --pool "$POOL" --agent "$AGENT" --acceptTeeEula --runAsService
 
