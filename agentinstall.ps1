@@ -18,7 +18,7 @@ if (test-path "c:\agent")
 #create a new folder
 new-item -ItemType Directory -Force -Path "c:\agent"
 set-location "c:\agent"
-
+write-host "folder agent is created "
 $env:VSTS_AGENT_HTTPTRACE = $true
 
 #github requires tls 1.2
@@ -29,18 +29,18 @@ $wr = Invoke-WebRequest https://api.github.com/repos/Microsoft/azure-pipelines-a
 $tag = ($wr | ConvertFrom-Json)[0].tag_name
 $tag = $tag.Substring(1)
 
-#write-host "$tag is the latest version"
+write-host "$tag is the latest version"
 #build the url
 $download = "https://vstsagentpackage.azureedge.net/agent/$tag/vsts-agent-win-x64-$tag.zip"
 #download the agent
 Invoke-WebRequest $download -Out vsts-agent.zip
-
+write-host "agent version is downloaded "
 #expand the zip
 Expand-Archive -Path vsts-agent.zip -DestinationPath $PWD
-
+write-host "agent is zipped "
 #run the config script of the build agent
 .\config.cmd --unattended --url "$URL" --auth pat --token "$PAT" --pool "$POOL" --agent "$AGENT" --acceptTeeEula --runAsService
-
+write-host "agent is installed "
 #exit
 Stop-Transcript
 exit 0
