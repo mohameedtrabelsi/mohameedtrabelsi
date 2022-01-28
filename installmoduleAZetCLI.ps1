@@ -1,9 +1,14 @@
 ﻿###################################
 ###Install Azure CLI on Windows###
 ##################################
+#Install Chocolatey so we can simplify the install of some tools and apps for the build agent
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 
-$ProgressPreference = 'SilentlyContinue'; Invoke-WebRequest -Uri https://aka.ms/installazurecliwindows -OutFile .\AzureCLI.msi; Start-Process msiexec.exe -Wait -ArgumentList '/I AzureCLI.msi /quiet'; rm .\AzureCLI.msi
+#Install the Azure CLI
+choco install azure-cli -y
 
+#After we install the Azure CLI we need to add to the path environment variable so that az commands will work
+$env:Path += ";C:\Program Files (x86)\Microsoft SDKs\Azure\CLI2\wbin"
 
 #############################################
 ###Install the Azure Az PowerShell module###
