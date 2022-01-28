@@ -1,4 +1,4 @@
-﻿$SaveToPath = 'C:\Terraform\'
+﻿$SaveToPath = 'C:\Terraform'
 
 try
 {
