@@ -8,7 +8,7 @@ sudo tar zxvf *.tar.gz
 cd ..
 sudo chmod -R o+w $(pwd)/myagent
 cd $(pwd)/myagent
-./config.sh --unattended --url "https://dev.azure.com/allymeer-hossen/" --auth PAT --token "khjp73bizufgmvzzm6mh3puieqxztvbpfwkyqy4our5mzzavdw6a" --pool "testlinux" --agent $(hostname) --runAsService
+./config.sh --unattended --url "https://dev.azure.com/allymeer-hossen/" --auth PAT --token "lukspdn2imzgatakygjlix4ecypl76z67gytwzf4hd3ush6i24wq" --pool "testing" --agent $(hostname) --runAsService
 sudo ./svc.sh install
 sudo ./svc.sh start
 sudo ./svc.sh status
