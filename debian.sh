@@ -1,4 +1,4 @@
-echo $1 >> /tmp/echofile
+#echo $1 >> /tmp/echofile
 sudo mkdir /myagent
 cd /myagent
 sudo wget https://vstsagentpackage.azureedge.net/agent/2.186.1/vsts-agent-linux-x64-2.186.1.tar.gz
