@@ -1,5 +1,5 @@
 # install az cli
-wget https://aka.ms/InstallAzureCLIDeb | sudo bash
+sudo wget https://aka.ms/InstallAzureCLIDeb | sudo bash
 
 AZ_REPO=$(lsb_release -cs)
 echo "deb [arch=amd64] <https://packages.microsoft.com/repos/azure-cli/> $AZ_REPO main" |
