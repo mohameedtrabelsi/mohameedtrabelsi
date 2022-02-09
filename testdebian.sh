@@ -1,8 +1,9 @@
+su - azureuser -c "
 mkdir $(pwd)/myagent
 cd $(pwd)/myagent
 wget https://vstsagentpackage.azureedge.net/agent/2.196.2/vsts-agent-linux-x64-2.196.2.tar.gz # Newer versions may be available at the time you're reading this
 tar xzvf *.tar.gz
-
+echo pwd >> /tmp/echofile
 # configure as azdouser
 cd ..
 chmod -R o+w $(pwd)/myagent
