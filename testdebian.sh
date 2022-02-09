@@ -20,8 +20,12 @@ su - azureuser -c "
   --acceptTeeEula & wait $!"
 
 cd /home/azureuser
+
+sudo /myagent/svc.sh install
+sudo /myagent/svc.sh start
+
 #Configure as a service
-sudo ./svc.sh install azureuser
+#sudo ./svc.sh install azureuser
 
 #Start svc
-sudo ./svc.sh start
+#sudo ./svc.sh start
