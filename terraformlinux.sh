@@ -1,18 +1,17 @@
-# Debian / Ubuntu systems
-sudo apt update
-sudo apt install wget curl unzip
+wget https://releases.hashicorp.com/terraform/1.1.4/terraform_1.1.4_linux_amd64.zip
+sudo apt install unzip && unzip terraform_1.1.4_linux_amd64.zip
+sudo mv terraform /usr/local/bin/
 
-# RHEL based systems
-sudo yum install curl wget unzip
+mkdir /opt/terraform
+cd /opt/terraform
+curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+sudo apt-add-repository "deb [arch=$(dpkg --print-architecture)] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+sudo apt install terraform
 
-TER_VER=`curl -s https://api.github.com/repos/hashicorp/terraform/releases/latest | grep tag_name | cut -d: -f2 | tr -d \"\,\v | awk '{$1=$1};1'`
-wget https://releases.hashicorp.com/terraform/${TER_VER}/terraform_${TER_VER}_linux_amd64.zip
 
-$ unzip terraform_${TER_VER}_linux_amd64.zip
-Archive:  terraform_xxx_linux_amd64.zip
- inflating: terraform
 
-$ sudo mv terraform /usr/local/bin/
 
-$ which terraform
-/usr/local/bin/terraform
+#$ sudo mv terraform /usr/local/bin/
+#$ which terraform
+#/usr/local/bin/terraform
+#curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
