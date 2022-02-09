@@ -1,7 +1,3 @@
-sudo apt update && sudo apt upgrade
-sudo apt install curl
-sudo apt install python3-pycurl
-
 # download azdo agent
 mkdir $(pwd)/myagent
 cd $(pwd)/myagent
