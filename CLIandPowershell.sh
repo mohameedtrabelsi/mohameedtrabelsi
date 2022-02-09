@@ -21,3 +21,9 @@ sudo apt-get install -y powershell
 
 # Start PowerShell
 pwsh
+
+#Etape : register the default repository for PowerShell modules
+Set-PSRepository -Name 'PSGallery' -InstallationPolicy Trusted
+
+#Etape : Install the module AZ
+Install-Module -Name Az
