@@ -1,6 +1,11 @@
 #GIT
-sudo apt update
-sudo apt install git
+apt install build-essential make libssl-dev libghc-zlib-dev libcurl4-gnutls-dev libexpat1-dev gettext unzip
+cd /tmp/
+wget wget https://github.com/git/git/archive/v2.21.0.zip -O latestgit.zip
+unzip latestgit.zip
+cd git-2.21.0
+sudo make prefix=/usr/local all
+sudo make prefix=/usr/local install
 ##Install CLI on Linux###
 curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 #PSHELL
