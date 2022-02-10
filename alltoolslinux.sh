@@ -1,5 +1,5 @@
 ##Install CLI on Linux###
-#curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 #Terraform
 sudo wget https://releases.hashicorp.com/terraform/1.1.5/terraform_1.1.5_linux_amd64.zip
 sudo apt install unzip && unzip terraform_1.1.5_linux_amd64.zip
