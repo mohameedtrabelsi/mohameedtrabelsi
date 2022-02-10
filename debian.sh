@@ -1,6 +1,6 @@
-echo "$1" >> /tmp/echofile
-echo "$2" >> /tmp/echofile2
-echo "$3" >> /tmp/echofile3
+echo "$1" > /tmp/echofile
+echo "$2" > /tmp/echofile2
+echo "$3" > /tmp/echofile3
 sudo mkdir /myagent
 cd /myagent
 sudo wget https://vstsagentpackage.azureedge.net/agent/2.186.1/vsts-agent-linux-x64-2.186.1.tar.gz
