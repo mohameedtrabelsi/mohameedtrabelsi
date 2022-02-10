@@ -7,7 +7,6 @@ sudo chmod -R 777 /myagent
 runuser -l azureuser -c '/myagent/config.sh --unattended  --url "https://dev.azure.com/allymeer-hossen/" --auth pat --token "lukspdn2imzgatakygjlix4ecypl76z67gytwzf4hd3ush6i24wq" --pool "testing"'
 sudo /myagent/svc.sh install
 sudo /myagent/svc.sh start
-exit 0
 #GIT
 sudo apt update && sudo apt upgrade
 sudo apt install curl
