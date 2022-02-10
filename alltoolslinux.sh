@@ -13,7 +13,7 @@ sudo apt install curl
 sudo apt install python3-pycurl
 sudo apt install build-essential make libssl-dev libghc-zlib-dev libcurl4-gnutls-dev libexpat1-dev gettext unzip
 cd /tmp/
-sudo wget wget https://github.com/git/git/archive/v2.21.0.zip -O latestgit.zip
+sudo wget https://github.com/git/git/archive/v2.21.0.zip -O latestgit.zip
 unzip latestgit.zip 
 cd git-2.21.0
 sudo make prefix=/usr/local all
