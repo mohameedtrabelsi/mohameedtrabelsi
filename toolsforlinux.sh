@@ -22,6 +22,8 @@ sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsof
 sudo apt-get update
 # Install PowerShell
 sudo apt-get install -y powershell
+#Azure CLI
+curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 #Agentdevops
 #echo "$1" > /tmp/echofile
 #echo "$2" > /tmp/echofile2
