@@ -20,3 +20,14 @@ runuser -l azureuser -c "/myagent/config.sh --unattended  --url $1 --auth pat --
 sudo /myagent/svc.sh install
 sudo /myagent/svc.sh start
 exit 0
+### update OS & Install PSHELL & Module AZ
+sudo apt-get update
+sudo apt-get install -y wget apt-transport-https
+wget -q https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb
+sudo dpkg -i packages-microsoft-prod.deb
+sudo apt-get update
+sudo add-apt-repository universe
+sudo apt-get install -y powershell
+pwsh -c Install-Module -Name Az -Force
+#Install Azure CLI
+curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
