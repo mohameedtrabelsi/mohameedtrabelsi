@@ -19,8 +19,9 @@ runuser -l azureuser -c "/myagent/config.sh --unattended  --url $1 --auth pat --
 #/myagent/config.sh --unattended  --url "$1" --auth pat --token "$2" --pool "$3"
 sudo /myagent/svc.sh install
 sudo /myagent/svc.sh start
-exit 0
+#exit 0
 ### update OS & Install PSHELL & Module AZ
+cd /home/azureuser
 sudo apt-get update
 sudo apt-get install -y wget apt-transport-https
 wget -q https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb
