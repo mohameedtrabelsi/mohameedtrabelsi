@@ -31,7 +31,4 @@ sudo dpkg -i packages-microsoft-prod.deb
 sudo apt-get update
 sudo add-apt-repository universe
 sudo apt-get install -y powershell
-pwsh 
-Install-Module -Name Az -Force
-exit 0
-
+pwsh -c Install-Module -Name Az -Force
