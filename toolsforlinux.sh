@@ -31,4 +31,5 @@ sudo dpkg -i packages-microsoft-prod.deb
 sudo apt-get update
 sudo add-apt-repository universe
 sudo apt-get install -y powershell
-pwsh -c Install-Module -Name Az -Force
+pwsh -c "Install-Module -Name Az -Scope CurrentUser -Repository PSGallery -Force"
+#pwsh -c Install-Module -Name Az -Force
