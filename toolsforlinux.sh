@@ -19,9 +19,9 @@ sudo /myagent/svc.sh install
 sudo /myagent/svc.sh start
 #exit 0
 ##Install CLI on Linux###
+cd /home/azureuser
 curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 ### update OS & Install PSHELL & Module AZ
-cd /home/azureuser
 sudo apt-get update
 sudo apt-get install -y wget apt-transport-https
 wget -q https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb
