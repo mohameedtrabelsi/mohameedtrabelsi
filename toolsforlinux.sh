@@ -20,8 +20,6 @@ runuser -l azureuser -c "/myagent/config.sh --unattended  --url $1 --auth pat --
 sudo /myagent/svc.sh install
 sudo /myagent/svc.sh start
 #exit 0
-#Install Azure CLI
-curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 ### update OS & Install PSHELL & Module AZ
 cd /home/azureuser
 sudo apt-get update
