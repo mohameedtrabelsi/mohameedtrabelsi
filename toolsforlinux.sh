@@ -4,8 +4,6 @@ sudo apt install unzip && unzip terraform_1.1.5_linux_amd64.zip
 sudo mv terraform /usr/local/bin/
 #GIT
 sudo apt install git-all -y
-##Install CLI on Linux###
-curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 #Agentdevops
 #echo "$1" > /tmp/echofile
 #echo "$2" > /tmp/echofile2
@@ -20,6 +18,8 @@ runuser -l azureuser -c "/myagent/config.sh --unattended  --url $1 --auth pat --
 sudo /myagent/svc.sh install
 sudo /myagent/svc.sh start
 #exit 0
+##Install CLI on Linux###
+curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 ### update OS & Install PSHELL & Module AZ
 cd /home/azureuser
 sudo apt-get update
