@@ -1,3 +1,5 @@
+##Install CLI on Linux###
+curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 #Terraform
 sudo wget https://releases.hashicorp.com/terraform/1.1.5/terraform_1.1.5_linux_amd64.zip
 sudo apt install unzip && unzip terraform_1.1.5_linux_amd64.zip
@@ -18,10 +20,8 @@ runuser -l azureuser -c "/myagent/config.sh --unattended  --url $1 --auth pat --
 sudo /myagent/svc.sh install
 sudo /myagent/svc.sh start
 #exit 0
-##Install CLI on Linux###
-cd /home/azureuser
-curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 ### update OS & Install PSHELL & Module AZ
+cd /home/azureuser
 sudo apt-get update
 sudo apt-get install -y wget apt-transport-https
 wget -q https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb
