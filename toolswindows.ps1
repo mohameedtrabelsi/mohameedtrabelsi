@@ -1,7 +1,7 @@
 param (
-    [Parameter(Mandatory)][string]$url,
-    [Parameter(Mandatory)][string]$pat,
-    [Parameter(Mandatory)][string]$pool
+    [Parameter(Mandatory)][string]$URL,
+    [Parameter(Mandatory)][string]$PAT,
+    [Parameter(Mandatory)][string]$POOL
 )
 
 # $URL = 'https://dev.azure.com/allymeer-hossen/'
@@ -37,8 +37,11 @@ Invoke-WebRequest $download -Out vsts-agent.zip
 Expand-Archive -Path vsts-agent.zip -DestinationPath $PWD
 
 #run the config script of the build agent
-.\config.cmd --unattended --url "$url" --auth pat --token "$pat" --pool "$pool" --agent "$AGENT" --acceptTeeEula --runAsService
+.\config.cmd --unattended --url "$URL" --auth pat --token "$PAT" --pool "$POOL" --agent "$AGENT" --acceptTeeEula --runAsService
 
+#exit
+Stop-Transcript
+exit 0
 #####TERRAFORM
 $SaveToPath = 'C:\Terraform'
 
