@@ -1,13 +1,13 @@
 param (
-    [Parameter(Mandatory)][string]$URL,
-    [Parameter(Mandatory)][string]$PAT,
-    [Parameter(Mandatory)][string]$POOL
+    [Parameter(Mandatory)][string]$url,
+    [Parameter(Mandatory)][string]$pat,
+    [Parameter(Mandatory)][string]$pool
 )
 
 # $URL = 'https://dev.azure.com/allymeer-hossen/'
 # $PAT = 'pizo3qutl3xon7rppur7kxuuj6kbfin5fc7cxhu6exhdailn6hwq'
 # $POOL = 'test'
-$AGENT = Hostname
+$agent = Hostname
 
 #test if an old installation exists, if so, delete the folder
 if (test-path "c:\agent")
@@ -37,7 +37,7 @@ Invoke-WebRequest $download -Out vsts-agent.zip
 Expand-Archive -Path vsts-agent.zip -DestinationPath $PWD
 
 #run the config script of the build agent
-.\config.cmd --unattended --url "$URL" --auth pat --token "$PAT" --pool "$POOL" --agent "$AGENT" --acceptTeeEula --runAsService
+.\config.cmd --unattended --url "$url" --auth pat --token "$pat" --pool "$pool" --agent "$agent" --acceptTeeEula --runAsService
 
 #exit
 Stop-Transcript
