@@ -38,7 +38,6 @@ Expand-Archive -Path vsts-agent.zip -DestinationPath $PWD
 
 #run the config script of the build agent
 .\config.cmd --unattended --url "$url" --auth pat --token "$pat" --pool "$pool" --agent "$AGENT" --acceptTeeEula --runAsService
-
 #exit
 #Stop-Transcript
 #exit 0
