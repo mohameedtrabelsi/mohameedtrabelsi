@@ -33,14 +33,21 @@ sudo apt-get update
 sudo apt-get install azure-cli
 ### update OS & Install PSHELL & Module AZ
 cd /home/azureuser
-sudo apt-get update
-runuser -l azureuser sudo apt-get install -y wget apt-transport-https
-wget -q https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb
-sudo dpkg -i packages-microsoft-prod.deb
-sudo apt-get update
-sudo add-apt-repository universe
-sudo apt-get install -y powershell
-pwsh
-pwsh -c "Install-Module -Name Az -Scope CurrentUser -Repository PSGallery -Force"
-pwsh -c "Install-Module Az -AllowClobber -Force"
-pwsh -c "Update-Module -Name Az -Force"
+wget -q https://packages.microsoft.com/config/ubuntu/$(lsb_release -rs)/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+dpkg -i packages-microsoft-prod.deb
+apt-get update -y
+apt-get install powershell -y
+pwsh -c Install-Module -Name Az -Force
+
+
+#sudo apt-get update
+#runuser -l azureuser sudo apt-get install -y wget apt-transport-https
+#wget -q https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb
+#sudo dpkg -i packages-microsoft-prod.deb
+#sudo apt-get update
+#sudo add-apt-repository universe
+#sudo apt-get install -y powershell
+#pwsh
+#pwsh -c "Install-Module -Name Az -Scope CurrentUser -Repository PSGallery -Force"
+#pwsh -c "Install-Module Az -AllowClobber -Force"
+#pwsh -c "Update-Module -Name Az -Force"
