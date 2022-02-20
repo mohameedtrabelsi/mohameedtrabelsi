@@ -51,12 +51,10 @@ sudo dpkg -i packages-microsoft-prod.deb
 sudo apt-get update
 sudo add-apt-repository universe
 sudo apt-get install -y powershell
-sudo mv Powershell.sh /usr/local/bin/Powershell.sh
-sudo chmod -R 777 /usr/local/bin/Powershell.sh
 
 #### INSTALL AZ Module###
 wget https://raw.githubusercontent.com/mbouaklaine/MohamedBouaklaine/main/Powershell.sh
-sudo chmod 777 Powershell.sh 
-runuser -l azureuser -c "/home/azureuser/Powershell.sh"
+sudo mv Powershell.sh /usr/local/bin/Powershell.sh
+sudo chmod -R 777 /usr/local/bin/Powershell.sh
 
 
