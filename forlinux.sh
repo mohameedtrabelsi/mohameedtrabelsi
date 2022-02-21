@@ -52,7 +52,7 @@ sudo apt-get update
 sudo add-apt-repository universe
 sudo apt-get install -y powershell
 sudo mv Powershell.sh /usr/local/bin/Powershell.sh
-sudo chmod -R 777 /usr/local/bin/Powershell.sh
+#sudo chmod -R 777 /usr/local/bin/Powershell.sh
 cd  /usr/local/bin/ 
 Powershell.sh
 
