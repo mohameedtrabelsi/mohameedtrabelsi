@@ -53,10 +53,10 @@ sudo add-apt-repository universe
 sudo apt-get install -y powershell
 sudo mv Powershell.sh /usr/local/bin/Powershell.sh
 #sudo chmod -R 777 /usr/local/bin/Powershell.sh
-cd  /usr/local/bin/ 
-Powershell.sh
+#cd  /usr/local/bin/ 
+#Powershell.sh
 
 #### INSTALL AZ Module###
-#wget https://raw.githubusercontent.com/mbouaklaine/MohamedBouaklaine/main/Powershell.sh
+wget https://raw.githubusercontent.com/mbouaklaine/MohamedBouaklaine/main/Powershell.sh
 
 
