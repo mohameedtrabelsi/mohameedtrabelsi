@@ -54,8 +54,10 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 
 #Install the Azure CLI
 choco install azure-cli -y
+
 #After we install the Azure CLI we need to add to the path environment variable so that az commands will work
 $env:Path += ";C:\Program Files (x86)\Microsoft SDKs\Azure\CLI2\wbin"
+
 ###Install the Azure Az PowerShell module###
 #Etape : Installation Module AZ
 install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
