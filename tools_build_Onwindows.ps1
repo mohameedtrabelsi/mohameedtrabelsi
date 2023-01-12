@@ -1,53 +1,12 @@
-##################################
-#### TERRAFORM ###################
-##################################
+#############################################
+###Install the Azure Az PowerShell module###
+############################################
 
-$SaveToPath = 'C:\Terraform'
+#Etape : Installation Module AZ
+install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
 
-try
-{
-    if ($PSCmdlet.ParameterSetName -eq 'Version')
-    {
-        $downloadVersion = $Version
-    }
-    else
-    {
-        $releasesUrl = 'https://api.github.com/repos/hashicorp/terraform/releases'
-        $releases = Invoke-RestMethod -Method Get -UseBasicParsing -Uri $releasesUrl
-        $downloadVersion = $releases.Where({!$_.prerelease})[0].name.trim('v')
-    }
+#Etape : register the default repository for PowerShell modules
+Set-PSRepository -Name 'PSGallery' -InstallationPolicy Trusted
 
-    $terraformFile = "terraform_${downloadVersion}_windows_amd64.zip"
-    $terraformURL = "https://releases.hashicorp.com/terraform/${downloadVersion}/${terraformFile}"
-
-    $download = Invoke-WebRequest -UseBasicParsing -Uri $terraformURL -DisableKeepAlive -OutFile "${env:Temp}\${terraformFile}" -ErrorAction SilentlyContinue -PassThru
-
-    if (($download.StatusCode -eq 200) -and (Test-Path "${env:Temp}\${terraformFile}"))
-    {
-        # If SaveToPath does not exist, create it
-        if (-not (Test-Path -Path $SaveToPath))
-        {
-            $null = New-Item -Path $SaveToPath -ItemType Directory -Force
-        }
-
-        # Unblock File
-        Unblock-File "${env:Temp}\${terraformFile}"
-
-        # Unpack archive
-        Start-Sleep -Seconds 10
-        Expand-Archive -Path "${env:Temp}\${terraformFile}" -DestinationPath $SaveToPath -Force
-
-        # Clean up temp folder
-        Remove-Item -Path "${env:Temp}\${terraformFile}" -Force
-
-        # Set up environment variable
-        
-        $path = [Environment]::GetEnvironmentVariable('Path', "Machine")
-        [Environment]::SetEnvironmentVariable('PATH', "${path};${SaveToPath}", 'Machine')
-
-    }
-}
-catch
-{
-    Write-Error $_
-}
+#Etape : Install the module AZ
+Install-Module -Name Az
